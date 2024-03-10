@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Loading Page</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      overflow: hidden; /* Hide overflow to prevent scrolling */
+    }
+
+    .loading-message {
+      font-size: 24px;
+      color: #3498db;
+      display: none;
+      background-size: cover;
+      background-position: center;
+      width: 100%;
+      height: 100%;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
+
+    #loading-message-1 {
+      background-image: url('/InShot_20231127_060239896.jpg'); /* Add your image URL for the first loading page */
+    }
+
+    #loading-message-2 {
+      background-image: url('/InShot_20231127_060425129.jpg'); /* Add your image URL for the second loading page */
+    }
+
+    #loading-message-text {
+      margin-top: 20px;
+    }
+
+    #content {
+      display: none;
+      z-index: 2; /* Ensure the content is on top of the loading pages */
+    }
+  </style>
+</head>
+<body>
+
+<div id="loading-message-1" class="loading-message">
+  <div></div>
+  <div id="loading-message-text"></div>
+</div>
+
+<div id="loading-message-2" class="loading-message">
+  <div></div>
+  <img src="/InShot_20231127_163438961.jpg" height="1270" width="380">
+  <div id="loading-message-text"></div>
+</div>
+
+<div id="content">
+  <h1>Welcome to the New Page!</h1>
+  <!-- Add your content for the new page here -->
+</div>
+
+<script>
+  // First loading page
+  setTimeout(function() {
+    document.getElementById('loading-message-1').style.display = 'none';
+    document.getElementById('loading-message-2').style.display = 'flex';
+
+    // Second loading page
+    setTimeout(function() {
+      document.getElementById('loading-message-2').style.display = 'none';
+      document.getElementById('content').style.display = 'block';
+    }, 10000);
+  }, );
+</script>
+
+</body>
+</html>
